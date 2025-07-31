@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import "./NasabahDitemui.css";
 
 const dummyProgressAfpAsman = [
     { namaAfp: "Andi", newData: 12 },

@@ -50,11 +50,10 @@ const InputSDM = () => {
   };
 
   return (
-    <>
-      {/* Navbar biru + tombol kembali */}
+    <div className="asman-layout">
       <AppBar position="static" sx={{ bgcolor: "#002b5b" }}>
         <Toolbar>
-          <IconButton edge="start" color="inherit" onClick={() => navigate("/")}>
+          <IconButton edge="start" color="inherit" onClick={() => navigate("/asman")}>
             <ArrowBackIcon />
           </IconButton>
           <Typography variant="h6" sx={{ ml: 2 }}>
@@ -63,13 +62,11 @@ const InputSDM = () => {
         </Toolbar>
       </AppBar>
 
-      {/*konten utama */}
-      <Box sx={{ p: 4 }}>
+      <Box className="asman-content" sx={{ p: 4, textAlign: 'left' }}>
         <Typography variant="h5" gutterBottom fontWeight="bold">
           Input SDM Direkrut
         </Typography>
 
-        {/* Form Input */}
         <Box component="form" onSubmit={handleSubmit} sx={{ mb: 4 }}>
           <TextField
             label="Nama SDM Direkrut"
@@ -94,7 +91,6 @@ const InputSDM = () => {
           </Button>
         </Box>
 
-        {/* Tabel Hasil Input */}
         <Paper>
           <Table>
             <TableHead>
@@ -118,7 +114,7 @@ const InputSDM = () => {
           </Table>
         </Paper>
       </Box>
-    </>
+    </div>
   );
 };
 

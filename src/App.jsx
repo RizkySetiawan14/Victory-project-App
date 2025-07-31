@@ -50,12 +50,12 @@ function App() {
           <Route path="review-progress-afp" element={<ProgressAfpMM />} />
         </Route>
         <Route path="/cmm" element={<LayoutCmm />}>
-          <Route path="/cmm" element={<LayoutCmm><DashboardCmm /></LayoutCmm>} />
-          <Route path="/cmm/progress-Cmm" element={<LayoutCmm><ProgressCmm /></LayoutCmm>} />
-          <Route path="/cmm/target-triwulan-Cmm" element={<LayoutCmm><TargetTriwulanCmm /></LayoutCmm>} />
-          <Route path="/cmm/total-new-data" element={<LayoutCmm><TotalNewDataAllTeam /></LayoutCmm>} />
-          <Route path="/cmm/total-nasabah-ditemui" element={<LayoutCmm><TotalNasabahDitemui /></LayoutCmm>} />
-          <Route path="/cmm/Progres-Afp-Cmm" element={<LayoutCmm><ProgressAfpCmm /></LayoutCmm>} />
+          <Route index element={<DashboardCmm />} />
+          <Route path="progress-Cmm" element={<ProgressCmm />} />
+          <Route path="target-triwulan-Cmm" element={<TargetTriwulanCmm />} />
+          <Route path="total-new-data" element={<TotalNewDataAllTeam />} />
+          <Route path="total-nasabah-ditemui" element={<TotalNasabahDitemui />} />
+          <Route path="progres-afp-cmm" element={<ProgressAfpCmm />} />
         </Route>
       </Routes>
     </Router>

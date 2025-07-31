@@ -90,7 +90,7 @@ th {
     padding: 8px 16px;
     cursor: pointer;
     display: inline-flex;
-    align-items: center;
+    align-items: left;
     gap: 8px;
     margin-bottom: 16px;
     font-weight: bold;
@@ -128,7 +128,7 @@ th {
 .summary-box {
     background-color: #ffffff;
     padding: 40px;
-    text-align: center;
+    text-align: left;
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     font-size: 24px;
@@ -156,4 +156,15 @@ td {
     border: 1px solid #ddd;
     text-align: left;
     font-size: 14px;
+}
+
+.content-cmm {
+    flex: 1;
+    padding: 24px;
+    background-color: #f4f4f4;
+    display: block;
+    /* pastikan tidak center */
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: left;
 }

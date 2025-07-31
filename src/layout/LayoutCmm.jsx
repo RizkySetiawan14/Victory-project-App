@@ -3,12 +3,13 @@ import NavbarCmm from "../components/cmm/NavbarCmm";
 import "../components/cmm/cmm.css";
 import { Outlet } from "react-router-dom";
 
-const LayoutCmm = ({ children }) => {
+const LayoutCmm = () => {
     return (
         <div className="layout-cmm">
             <NavbarCmm />
-            <Outlet />
-            <main className="content-cmm">{children}</main>
+            <main className="content-cmm">
+                <Outlet />
+            </main>
         </div>
     );
 };

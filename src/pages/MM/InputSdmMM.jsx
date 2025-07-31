@@ -1,27 +1,27 @@
 import React, { useState } from "react";
-import './InputSdmMM.css';
 import {
     Box,
     Button,
-    TextField,
-    Typography,
     Table,
+    TableBody,
+    TableCell,
     TableHead,
     TableRow,
-    TableCell,
-    TableBody,
+    TextField,
+    Typography,
 } from "@mui/material";
 
 const InputSdmMM = () => {
+    const [data, setData] = useState([]);
     const [sdm, setSdm] = useState("");
     const [perekut, setPerekut] = useState("");
-    const [data, setData] = useState([]);
 
     const handleSubmit = () => {
-        if (!sdm || !perekut) return;
-        setData([...data, { sdm, perekut }]);
-        setSdm("");
-        setPerekut("");
+        if (sdm.trim() && perekut.trim()) {
+            setData([...data, { sdm, perekut }]);
+            setSdm("");
+            setPerekut("");
+        }
     };
 
     return (
@@ -31,8 +31,8 @@ const InputSdmMM = () => {
                 py: 3,
                 display: "flex",
                 flexDirection: "column",
-                alignItems: "flex-start",   // Pastikan konten mulai dari kiri
-                textAlign: "left",          // Pastikan teks tidak center
+                alignItems: "flex-start",
+                textAlign: "left",
                 width: "100%",
             }}
         >
@@ -45,70 +45,103 @@ const InputSdmMM = () => {
                 }}
                 sx={{
                     width: "100%",
-                    maxWidth: 400,
+                    maxWidth: 600,
                     mb: 4,
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: 2,
                 }}
             >
                 <Typography variant="h6" gutterBottom fontWeight="bold">
                     Input SDM Baru
                 </Typography>
-                <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
-                    <TextField
-                        label="Nama SDM Baru"
-                        variant="outlined"
-                        value={sdm}
-                        onChange={(e) => setSdm(e.target.value)}
-                        fullWidth
-                    />
-                    <TextField
-                        label="Perekrut"
-                        variant="outlined"
-                        value={perekut}
-                        onChange={(e) => setPerekut(e.target.value)}
-                        fullWidth
-                    />
-                    <Button type="submit" variant="contained">
-                        SIMPAN DATA
-                    </Button>
-                </Box>
+                <TextField
+                    label="Nama SDM Baru"
+                    variant="outlined"
+                    value={sdm}
+                    onChange={(e) => setSdm(e.target.value)}
+                    fullWidth
+                />
+                <TextField
+                    label="Perekrut"
+                    variant="outlined"
+                    value={perekut}
+                    onChange={(e) => setPerekut(e.target.value)}
+                    fullWidth
+                />
+                <Button type="submit" variant="contained">
+                    SIMPAN DATA
+                </Button>
             </Box>
 
             {/* Tabel review */}
-            <Box sx={{ width: "100%", overflowX: "auto" }}>
-                <Table sx={{ minWidth: 600 }}>
-                    <TableHead>
-                        <TableRow>
-                            <TableCell
-                                align="center"
-                                sx={{ backgroundColor: "#002b5b", color: "#fff" }}
-                            >
-                                NO
-                            </TableCell>
-                            <TableCell
-                                align="center"
-                                sx={{ backgroundColor: "#002b5b", color: "#fff" }}
-                            >
-                                SDM Baru
-                            </TableCell>
-                            <TableCell
-                                align="center"
-                                sx={{ backgroundColor: "#002b5b", color: "#fff" }}
-                            >
-                                Perekrut
-                            </TableCell>
-                        </TableRow>
-                    </TableHead>
-                    <TableBody>
-                        {data.map((item, index) => (
-                            <TableRow key={index}>
-                                <TableCell align="center">{index + 1}</TableCell>
-                                <TableCell align="center">{item.sdm}</TableCell>
-                                <TableCell align="center">{item.perekut}</TableCell>
+            {data.length > 0 && (
+                <Box sx={{ width: "100%", maxWidth: 800, overflowX: "auto" }}>
+                    <Table sx={{ minWidth: 600 }} size="small">
+                        <TableHead>
+                            <TableRow>
+                                <TableCell
+                                    align="left"
+                                    sx={{
+                                        backgroundColor: "#FFD700",
+                                        color: "#000",
+                                        borderLeft: "4px solid #FFD700",
+                                        fontWeight: "bold",
+                                    }}
+                                >
+                                    NO
+                                </TableCell>
+                                <TableCell
+                                    align="left"
+                                    sx={{
+                                        backgroundColor: "#FFD700",
+                                        color: "#000",
+                                        borderLeft: "4px solid #FFD700",
+                                        fontWeight: "bold",
+                                    }}
+                                >
+                                    SDM Baru
+                                </TableCell>
+                                <TableCell
+                                    align="left"
+                                    sx={{
+                                        backgroundColor: "#FFD700",
+                                        color: "#000",
+                                        borderLeft: "4px solid #FFD700",
+                                        fontWeight: "bold",
+                                    }}
+                                >
+                                    Perekrut
+                                </TableCell>
                             </TableRow>
-                        ))}
-                    </TableBody>
-                </Table>
-            </Box>
+                        </TableHead>
+                        <TableBody>
+                            {data.map((item, index) => (
+                                <TableRow key={index}>
+                                    <TableCell
+                                        align="left"
+                                        sx={{ borderLeft: "4px solid #FFD700" }}
+                                    >
+                                        {index + 1}
+                                    </TableCell>
+                                    <TableCell
+                                        align="left"
+                                        sx={{ borderLeft: "4px solid #FFD700" }}
+                                    >
+                                        {item.sdm}
+                                    </TableCell>
+                                    <TableCell
+                                        align="left"
+                                        sx={{ borderLeft: "4px solid #FFD700" }}
+                                    >
+                                        {item.perekut}
+                                    </TableCell>
+                                </TableRow>
+                            ))}
+                        </TableBody>
+                    </Table>
+                </Box>
+            )}
         </Box>
     );
 };

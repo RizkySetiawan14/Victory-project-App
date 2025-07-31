@@ -12,6 +12,7 @@ const DashboardCard = () => {
     const reviewMenus = [
         { title: "Total New Data All Team" },
         { title: "Total Nasabah Ditemui" },
+        { title: "Progress Afp" }
     ];
 
     return (

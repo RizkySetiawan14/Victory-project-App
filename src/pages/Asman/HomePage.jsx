@@ -8,7 +8,7 @@ const HomePage = () => {
   const t = raw ? JSON.parse(raw) : { totalNmi: 0 };
   const totalNmi = t.totalNmi || 0;
 
-  const kurs = 16300;
+  const kurs = 10000;
   const targetRp = 300_000_000;
   const targetUsd = targetRp / kurs;
   const kurang = Math.max(0, targetUsd - totalNmi);

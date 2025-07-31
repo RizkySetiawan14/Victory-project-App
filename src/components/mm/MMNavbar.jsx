@@ -1,3 +1,4 @@
+// src/components/mm/MMNavbar.jsx
 import React from "react";
 import { AppBar, Toolbar, Typography, Box, Button } from "@mui/material";
 import { Link } from "react-router-dom";

@@ -18,34 +18,38 @@ const DashboardCard = () => {
   ];
 
   return (
-    <div className="dashboard-container">
-      <h1 className="dashboard-title">ASMAN WEEKLY REPORT 2025</h1>
+    <Box className="dashboard-cmm-container">
+      <Typography variant="h4" gutterBottom className="dashboard-cmm-title">
+        ASMAN WEEKLY REPORT
+      </Typography>
 
       <Grid container spacing={2}>
         {[...inputMenus, ...reviewMenus].map((menu, index) => (
           <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
-            <div className="card-custom">
+            <Card className="card-cmm">
               <CardContent>
                 <Typography variant="h6" gutterBottom>{menu.title}</Typography>
                 {menu.path ? (
                   <Button
-                    className="card-button"
+                    variant="contained"
+                    fullWidth
                     component={Link}
                     to={menu.path}
+                    className="card-button"
                   >
                     BUKA
                   </Button>
                 ) : (
-                  <Button className="card-button-disabled" disabled>
+                  <Button variant="contained" fullWidth disabled className="card-button-disabled">
                     Hanya Review
                   </Button>
                 )}
               </CardContent>
-            </div>
+            </Card>
           </Grid>
         ))}
       </Grid>
-    </div>
+    </Box>
   );
 };
 

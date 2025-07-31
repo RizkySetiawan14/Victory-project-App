@@ -1,13 +1,19 @@
+// FILE: src/layout/AsmanLayout.jsx
 import React from "react";
-import { Outlet } from "react-router-dom";
-// Tes apakah ini error
 import AsmanNavbar from "../components/asman/AsmanNavbar";
+import "../components/asman/asman.css";
+import { Outlet } from "react-router-dom";
 
 const AsmanLayout = () => {
   return (
-    <div style={{ textAlign: "left" }}>
+    <div className="asman-layout-wrapper">
+      {/* Navbar tetap di atas */}
       <AsmanNavbar />
-      <Outlet />
+
+      {/* Main content berada di bawah navbar dan rata kiri */}
+      <main className="asman-content">
+        <Outlet />
+      </main>
     </div>
   );
 };

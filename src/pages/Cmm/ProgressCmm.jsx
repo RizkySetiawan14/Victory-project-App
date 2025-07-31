@@ -37,7 +37,7 @@ const ProgressCmm = () => {
                 <span>Beranda</span>
             </button>
 
-            <h2 className="section-title">Progress MM</h2>
+            <h2 className="section-title">Progress CMM</h2>
 
             <div className="table-container">
                 <form onSubmit={(e) => e.preventDefault()}>
@@ -52,7 +52,6 @@ const ProgressCmm = () => {
                                 placeholder="Masukkan Nama MM"
                             />
                         </div>
-
                         <div className="checkbox-group">
                             <label>
                                 <input
