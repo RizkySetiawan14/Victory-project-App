@@ -1,0 +1,35 @@
+/* Navbar RO */
+.navbar-ro {
+    background-color: #004aad;
+    /* biru */
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar-ro .navbar-brand {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.navbar-ro .navbar-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-ro .navbar-links li a {
+    color: white;
+    text-decoration: none;
+    padding: 6px 10px;
+    border-radius: 6px;
+    transition: background 0.3s;
+}
+
+.navbar-ro .navbar-links li a:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
